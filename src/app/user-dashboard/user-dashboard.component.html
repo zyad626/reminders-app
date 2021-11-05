@@ -1,0 +1,30 @@
+<section class="user-dashboard">
+  <div class="container-fluid g-0">
+    <div class="row g-0">
+      <div class="side-nav-container col-3">
+        <div class="side-nav-header">
+          <img src="/assets/Logo.png" class="img-fluid"/>
+          <span><a routerLink="/">Remainder</a></span>
+          <img src="/assets/navbar-icon.svg" class="img-fluid"/>
+        </div>
+        <div class="side-nav-links">
+          <ul class="list-unstyled nav-links" #navLinksUl>
+            <li *ngFor="let link of linksArr">
+              <nav-link [content]="link.content" [iconPath]="link.iconPath" [path]="link.linkAddr" (currentActive)="addActiveClass($event)">
+              </nav-link>
+            </li>
+          </ul>
+        </div>
+        <div class="side-nav-footer">
+          <img src="/assets/userimg-thumb.png" class="img-fluid"/>
+          <span>User Name</span>
+          <a routerLink="/login"><img src="/assets/logout.svg" class="img-fluid"/></a>
+        </div>
+      </div>
+      <div class="dashboard-content col-9">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</section>
+

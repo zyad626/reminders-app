@@ -1,0 +1,4 @@
+<a class="nav-link-anchor" (click)="onActivatePath(currentLink)" #currentLink routerLink="{{goingToLink}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+  <img src="{{iconPath}}" alt="{{linkContent}}" />
+   <span>{{linkContent}}</span>
+</a>

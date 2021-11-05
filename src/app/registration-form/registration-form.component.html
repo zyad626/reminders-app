@@ -1,0 +1,26 @@
+<section class="container">
+  <section class="registration-form">
+    <div class="form-title">
+      <img src="assets/Logo.png"/>
+      <h2>Reminders</h2>
+    </div>
+    <form>
+      <app-custom-input [inputPlaceholder]="usernameInputPlaceholder" [inputType]="usernameInputType"
+                        [inputId]="usernameId" [inputIcon]="usernameIcon"
+      >
+      </app-custom-input>
+
+      <app-custom-input [inputPlaceholder]="userPasswordPlaceholder" [inputType]="userPasswordType"
+                        [inputId]="passwordId" [inputIcon]="passwordIcon"
+      >
+      </app-custom-input>
+
+      <button class="btn" routerLink="/login">
+        <img src="/assets/verified.svg" />
+        <span>Register</span>
+      </button>
+      <a routerLinkActive="/">Already have an account ?</a>
+    </form>
+  </section>
+
+</section>

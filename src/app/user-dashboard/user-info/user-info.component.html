@@ -1,0 +1,36 @@
+<section class="user-info">
+  <div class="container g-0">
+    <div class="row">
+      <div class="col-3">
+        <img src="/assets/user-image.png" alt="user-name" class="img-fluid class"/>
+      </div>
+      <div class="col-9">
+        <app-custom-input [inputPlaceholder]="'User name'" [inputIcon]="'/assets/profile.svg'"
+                          [inputId]="'username-dashboard'" [inputType]="'text'"></app-custom-input>
+        <app-custom-input [inputPlaceholder]="'User password'" [inputIcon]="'/assets/lock.svg'"
+                          [inputId]="'password-dashboard'" [inputType]="'password'"></app-custom-input>
+        <app-custom-input [inputPlaceholder]="'User email'" [inputIcon]="'/assets/envelope.svg'"
+                          [inputId]="'email-dashboard'" [inputType]="'email'"></app-custom-input>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="log-out-button">
+        <a routerLink="/login" class="reset-router-link">
+          <img src="/assets/logout.svg" alt="logout" class="img-fluid">
+          Logout
+        </a>
+      </button>
+    </div>
+    <div class="col-12">
+      <button class="deactivate-account-button">
+        <a routerLink="/register" class="reset-router-link">
+          <img src="/assets/dash-sign.svg" alt="deactivate" class="img-fluid">
+          Deactivate Account
+        </a>
+      </button>
+    </div>
+    <p class="text-center">
+      Deactivate Account Will Remove All The User Data.
+    </p>
+  </div>
+</section>

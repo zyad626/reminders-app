@@ -1,0 +1,21 @@
+<div class="row g-0">
+  <div class="col-6 offset-3">
+    <custom-search [searchType]="'Tasks'"></custom-search>
+  </div>
+  <div class="task-header finished-tasks col-xs-12">
+    <img src="/assets/trophy-green.svg" alt="finished-tasks" class="img-fluid"/>
+    <h4>Finished Tasks</h4>
+  </div>
+</div>
+<div class="row g-0">
+  <div class="task-input col-8 offset-2">
+    <div *ngFor="let task of completedTasks" class="task-container finished-tasks">
+      <input type="checkbox" name="{{ task.taskName }}" id="{{task.taskName}}" readonly disabled/>
+      <label for="{{task.taskName}}">{{task.taskName}}</label>
+      <div class="show-more-container">
+        <img src="/assets/trophy-green.svg" alt="trophy"/>
+      </div>
+    </div>
+  </div>
+</div>
+

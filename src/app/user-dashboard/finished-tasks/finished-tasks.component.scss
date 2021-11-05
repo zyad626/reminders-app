@@ -1,0 +1,52 @@
+.task-header {
+  &.finished-tasks {
+    color: rgba(99, 166, 78);
+    background-color: rgba(99, 166, 78, .05) !important;
+  }
+}
+
+.task-container {
+
+  &:hover {
+    .show-more-container {
+    }
+  }
+
+
+  &.finished-tasks {
+    background-color: rgba(99, 166, 78, .25);
+    border: 2px solid  rgba(99, 166, 78);
+    font-size: 29px;
+    margin-block: 24px;
+    padding: 40px;
+    border-radius: 5px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    position: relative;
+    color: rgba(99, 166, 78);
+    text-decoration: line-through;
+
+
+    input {
+      font-size: 29px;
+    }
+
+    .show-more-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 44px 24px;
+      cursor: pointer;
+      background: transparent !important;
+    }
+
+    img {
+      display: block;
+    }
+  }
+}

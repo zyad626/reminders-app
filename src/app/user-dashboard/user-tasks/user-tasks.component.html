@@ -1,0 +1,57 @@
+<div class="row g-0">
+  <div class="col-6 offset-3">
+    <custom-search [searchType]="'Tasks'" (searchingValue)="searchingForTask($event)"></custom-search>
+  </div>
+  <div class="task-header col-xs-12">
+    <img src="/assets/note-book.svg" alt="tasks" class="img-fluid"/>
+    <h4>Tasks</h4>
+  </div>
+</div>
+<div class="row g-0">
+  <div class="task-input col-8 offset-2">
+    <div class="new-task-container">
+      <img src="/assets/new-task.svg" alt="new task"/>
+      <input type="text" placeholder="Create new task" (keydown.enter)="addTask(taskNameInput, dateInput, taskTime)"
+             #taskNameInput/>
+      <span> <input type="date" id="task-date" class="form-control" #dateInput/><br> <input type="time" id="task-time"
+                                                                                            class="form-control"
+                                                                                            #taskTime/> </span>
+      <img src="/assets/three-dots.svg" alt="dots shape"/>
+    </div>
+
+    <div *ngFor="let task of tasks" class="task-container" #pinParent>
+      <input type="checkbox" name="{{ task.taskName }}" id="{{task.taskName}}" (change)="completeTask(task.taskName)"/>
+      <label for="{{task.taskName}}">{{task.taskName}}</label>
+      <div class="show-more-container">
+        <img src="/assets/three-dots-white.svg" alt="show-more" class="show-more-icon"/>
+        <img src="/assets/clock.svg" alt="change time"/>
+        <img src="/assets/pin.svg" alt="pin" (click)="pinTask(pinParent, task.taskName)"/>
+        <img src="/assets/color-select.svg" alt="select-color" class="selecting-color"/>
+        <!--<span class="color-selector">
+          <div class="color-container st-color">
+            <label for="first_color"></label>
+            <input type="checkbox" name="first_color" id="first_color" value="5DA1B6"/>
+          </div>
+          <div class="color-container st-color">
+            <label for="second_color"></label>
+            <input type="checkbox" name="first_color" id="second_color" value="EFC02F"/>
+          </div>
+          <div class="color-container st-color">
+            <label for="third_color"></label>
+            <input type="checkbox" name="first_color" id="third_color" value="457AFB"/>
+          </div>
+          <div class="color-container st-color">
+            <label for="fourth_color"></label>
+            <input type="checkbox" name="first_color" id="fourth_color" value="F8F9FA"/>
+          </div>
+          <div class="color-container st-color">
+            <label for="fifth_color"></label>
+            <input type="checkbox" name="first_color" id="fifth_color" value="393D42"/>
+          </div>
+        </span>-->
+        <img src="/assets/archives.svg" alt="archives" (click)="archiveTask(task.taskName)"/>
+        <img src="/assets/trash.svg" alt="trash" (click)="removeTask(task.taskName)"/>
+      </div>
+    </div>
+  </div>
+</div>

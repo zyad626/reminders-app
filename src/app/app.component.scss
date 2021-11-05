@@ -1,0 +1,21 @@
+:root {
+  --primary-font: 'Arial', Tahoma !important;
+  --primary-color: rgb(69, 122, 251);
+  --gray-color: #6E747C;
+}
+
+* {
+  font-family: var(--primary-font);
+}
+
+body {
+
+}
+
+.reset-router-link {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: inherit;
+  }
+}

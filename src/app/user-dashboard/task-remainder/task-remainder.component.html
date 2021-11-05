@@ -1,0 +1,22 @@
+<div class="row g-0">
+  <div class="col-6 offset-3">
+    <custom-search [searchType]="'Remainders'"></custom-search>
+  </div>
+  <div class="task-header remainder-tasks col-xs-12">
+    <img src="/assets/clock.svg" alt="archived-tasks" class="img-fluid"/>
+    <h4>Current Tasks</h4>
+  </div>
+</div>
+<div class="row g-0">
+  <div class="task-input col-8 offset-2">
+    <div *ngFor="let task of workingOnTasks" class="task-container remainder-tasks">
+      <span #currentTimerSpan></span>
+      {{ triggerRemainder(task.taskDate, task.taskEndTime, currentTimerSpan) }}
+      <input type="checkbox" name="{{ task.taskName }}" id="{{task.taskName}}" readonly disabled/>
+      <label for="{{task.taskName}}">{{task.taskName}}</label>
+      <div class="show-more-container">
+        <img src="/assets/clock.svg" alt="archived"/>
+      </div>
+    </div>
+  </div>
+</div>

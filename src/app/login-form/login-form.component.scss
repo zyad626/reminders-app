@@ -1,0 +1,9 @@
+@import "../registration-form/registration-form.component";
+
+.login-form {
+  ::ng-deep .mat-button-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+}

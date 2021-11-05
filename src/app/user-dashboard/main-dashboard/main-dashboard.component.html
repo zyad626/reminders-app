@@ -1,0 +1,57 @@
+<div class="row g-0">
+  <div class="col-6 offset-3">
+    <custom-search [searchType]="'Tasks'"></custom-search>
+  </div>
+  <div class="task-header col-xs-12">
+    <img src="/assets/clock.svg" alt="tasks" class="img-fluid"/>
+    <h4>Today</h4>
+  </div>
+</div>
+<div class="row g-0">
+  <div class="task-input col-8 offset-2">
+    <div *ngFor="let task of todaysTasks" class="task-container pinned-task">
+      <input type="checkbox" name="{{ task.taskName }}" id="{{task.taskName}}" checked readonly disabled/>
+      <label for="{{task.taskName}}">{{task.taskName}}</label>
+    </div>
+    {{ calcTasks() }}
+    <section class="row dashboard-container">
+      <div class="col-6">
+        <div class="genre-container clock">
+            <span>
+              <img src="/assets/clock.svg" alt="Clock"/>
+              5
+            </span>
+          <h2>Remainders</h2>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="genre-container trophy">
+            <span>
+              <img src="/assets/trophy.svg" alt="Clock"/>
+              {{this.completedTasks}}
+            </span>
+          <h2>Pocket</h2>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="genre-container tasks">
+            <span>
+              <img src="/assets/note-book.svg" alt="Clock"/>
+              {{this.currentTasks}}
+            </span>
+          <h2>Task</h2>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="genre-container archives">
+            <span>
+              <img src="/assets/archives.svg" alt="Clock"/>
+              {{this.archiveTasks}}
+            </span>
+          <h2>Archive</h2>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+

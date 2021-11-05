@@ -1,0 +1,20 @@
+<div class="row g-0">
+  <div class="col-6 offset-3">
+    <custom-search [searchType]="'Trash'" ></custom-search>
+  </div>
+  <div class="task-header trash-header col-xs-12">
+    <img src="/assets/trash-red.svg" alt="tasks" class="img-fluid"/>
+    <h4>Trash</h4>
+  </div>
+</div>
+<div class="row g-0">
+  <div class="task-input col-8 offset-2">
+    <div *ngFor="let task of deletedTasks" class="task-container delete-task">
+      <input type="checkbox" name="{{ task.taskName }}" id="{{task.taskName}}" checked readonly disabled/>
+      <label for="{{task.taskName}}">{{task.taskName}}</label>
+      <div class="show-more-container" (click)="removeSelected(task.taskName)">
+        <img src="/assets/trash-red.svg" alt="trash"/>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,126 @@
+
+.task-container {
+  border: 2px solid rgba(239, 192, 47);
+  font-size: 29px;
+  margin-block: 24px;
+  padding: 40px;
+  border-radius: 5px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  position: relative;
+  background-color: rgba(239, 192, 47, 0.25);
+
+
+  &.pinned-task {
+    border: 2px solid rgba(239, 192, 47) !important;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 30%;
+      left: 0;
+      height: 50px;
+      width: 20px;
+      background: #EFC02F;
+      box-shadow: 0 4px 5px rgba(#EFC02F, .5);
+    }
+  }
+
+
+  &:hover {
+    .show-more-container {
+
+    }
+  }
+
+  input {
+    font-size: 29px;
+  }
+
+  .show-more-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 44px 24px;
+    cursor: pointer;
+
+  }
+}
+
+.task-input {
+  .dashboard-container {
+    .genre-container {
+      height: 300px;
+      width: 100%;
+      box-shadow: 0 4px 5px rgba(0, 0, 0, .25);
+      margin-block: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      font-size: 29px;
+
+      h2 {
+        height: 130px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-block-end: 0;
+      }
+
+      span {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 24px;
+        font-weight: bold;
+        font-size: 48px;
+        margin-block-start: 65px;
+
+        img {
+          height: 80px;
+          width: 80px;
+        }
+      }
+
+      &.clock {
+        background-color: rgba(#EFC02F, .25);
+
+        h2 {
+          color: #EFC02F;
+          background-color: rgba(#EFC02F, .05);
+        }
+      }
+
+      &.trophy {
+        background-color: rgba(#63A64E, .25);
+        h2 {
+          color: #63A64E;
+          background-color: rgba(#63A64E, .05);
+        }
+      }
+
+      &.tasks {
+        background-color: rgba(#393D42, .25);
+        h2 {
+          color: #393D42;
+          background-color: rgba(#393D42, .05);
+        }
+      }
+
+      &.archives {
+        background-color: rgba(#457AFB, .25);
+        h2 {
+          color: #457AFB;
+          background-color: rgba(#457AFB, .05);
+        }
+      }
+    }
+  }
+}
