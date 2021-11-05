@@ -1,8 +1,11 @@
 # Team 5 Members
 
 Zyad Yasser Abdallah Ali    18P4353
+
 Ahmed Adel Mounir           19P9647
+
 Reda Mohsen Reda            18P5141
+
 # PrayerApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
